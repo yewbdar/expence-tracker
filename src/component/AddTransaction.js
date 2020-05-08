@@ -1,12 +1,13 @@
 import React ,{useState , useContext}from 'react'
-import {GlobalContext} from '../context/GlobalState'
+import {GlobalContext} from '../context/GlobalState';
+import { v4 as uuidv4 } from 'uuid'
 function AddTransaction() {
     const [text, setText] = useState('')
     const [amount, setAmount] = useState(0)
 
    const {addTransaction , transaction} = useContext(GlobalContext)
    const data = {
-          id:transaction.length - 1,
+          id:uuidv4(),
           text:text,
           amount:+amount
    }
