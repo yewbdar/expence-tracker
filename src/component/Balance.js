@@ -1,11 +1,14 @@
 import React ,{useContext} from 'react'
 import {GlobalContext} from '../context/GlobalState'
 function Balance() {
-    const context=useContext(GlobalContext)
+    const {transaction}=useContext(GlobalContext)
+   const amount=transaction.map(amount => amount.amount)
+    const newValue = amount.reduce((total , curr) => ( total += curr) , 0).toFixed(0) 
+    console.log(newValue)
     return (
         <div>
             <h4>Your Balance</h4>
-            <h1 id='balance'>$0.00</h1>
+            <h1 id='balance'>${newValue}</h1>
         </div>
     )
 }

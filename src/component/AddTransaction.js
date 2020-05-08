@@ -1,9 +1,16 @@
-import React ,{useState}from 'react'
-
+import React ,{useState , useContext}from 'react'
+import {GlobalContext} from '../context/GlobalState'
 function AddTransaction() {
     const [text, setText] = useState('')
     const [amount, setAmount] = useState(0)
-   
+
+   const {addTransaction , transaction} = useContext(GlobalContext)
+   const data = {
+          id:transaction.length - 1,
+          text:text,
+          amount:+amount
+   }
+   console.log(data)
     return (
         <div>
            <h3>Add new transaction</h3>
@@ -21,7 +28,7 @@ function AddTransaction() {
            </form>
            
         
-           <button className='btn'>Add transaction</button>
+           <button  onClick={() => addTransaction(data)} className='btn'>Add transaction</button>
         </div>
     )
 }
