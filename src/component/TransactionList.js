@@ -2,7 +2,7 @@ import React ,{useContext} from 'react'
 import {GlobalContext} from '../context/GlobalState'
 function TransactionList() {
     const  {transaction , deleteTransaction}  = useContext(GlobalContext)
-    console.log('TRansaction list',transaction)
+    
     return (
         <>
            <h3>History</h3> 

@@ -11,7 +11,6 @@ function AddTransaction() {
           text:text,
           amount:+amount
    }
-   console.log(data)
     return (
         <div>
            <h3>Add new transaction</h3>

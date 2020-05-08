@@ -4,7 +4,7 @@ function Balance() {
     const {transaction}=useContext(GlobalContext)
    const amount=transaction.map(amount => amount.amount)
     const newValue = amount.reduce((total , curr) => ( total += curr) , 0).toFixed(0) 
-    console.log(newValue)
+   
     return (
         <div>
             <h4>Your Balance</h4>

@@ -6,12 +6,12 @@ export default (state ,action) => {
                    
             }
         case 'ADD_TRANSACTION' :
-            console.log('add action',action.payload )
+            
             return{
                 ...state,transaction:[action.payload,...state.transaction]
             }   
         default:
-            console.log('after',state)
+            
            return state;
     }
     
